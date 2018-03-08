@@ -31,5 +31,10 @@ hs_err_pid*
 *.xml
 *.cap
 *.jca
+*.classpath
 
+<<<<<<< HEAD
+/java_card_kit-2_2_2/
+=======
 java_card_kit-2_2_2/
+>>>>>>> branch 'master' of https://github.com/J0n4sty/project_veilige_software.git
