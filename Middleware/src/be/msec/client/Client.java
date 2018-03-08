@@ -31,15 +31,11 @@ public class Client {
 		c = new SimulatedConnection();
 
 		//Real Card:
-<<<<<<< HEAD
+
 		/*c = new Connection();
 		((Connection)c).setTerminal(0); //depending on which cardreader you use
 		*/
-=======
-//		c = new Connection();
-//		((Connection)c).setTerminal(0); //depending on which cardreader you use
 		
->>>>>>> branch 'master' of https://github.com/J0n4sty/project_veilige_software.git
 		c.connect(); 
 		
 		try {
@@ -63,11 +59,9 @@ public class Client {
 			a = new CommandAPDU(0x80, 0xB8, 0x00, 0x00,new byte[]{0xb, 0x01,0x02,0x03,0x04, 0x05, 0x06, 0x07, 0x08, 0x09,0x00, 0x00, 0x00}, 0x7f);
 			r = c.transmit(a);
 			System.out.println(r);
-<<<<<<< HEAD
-		if (r.getSW()!=0x9000) throw new Exception("Applet creation failed");
-=======
+
 			if (r.getSW()!=0x9000) throw new Exception("Applet creation failed");
->>>>>>> branch 'master' of https://github.com/J0n4sty/project_veilige_software.git
+
 			
 			//1. Select applet  (not required on a real card, applet is selected by default)
 			a = new CommandAPDU(0x00, 0xa4, 0x04, 0x00,new byte[]{0x01,0x02,0x03,0x04, 0x05, 0x06, 0x07, 0x08, 0x09,0x00, 0x00}, 0x7f);
