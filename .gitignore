@@ -25,3 +25,7 @@ hs_err_pid*
 *.txt
 *.bat
 *.xml
+/.metadata/
+/.recommenders/
+
+*.xml
