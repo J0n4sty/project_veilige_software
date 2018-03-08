@@ -28,11 +28,11 @@ public class Client {
 		IConnection c;
 
 		//Simulation:
-//		c = new SimulatedConnection();
+		c = new SimulatedConnection();
 
 		//Real Card:
-		c = new Connection();
-		((Connection)c).setTerminal(0); //depending on which cardreader you use
+//		c = new Connection();
+//		((Connection)c).setTerminal(0); //depending on which cardreader you use
 		
 		c.connect(); 
 		
@@ -49,15 +49,15 @@ public class Client {
 
 			
 			//0. create applet (only for simulator!!!)
-//			a = new CommandAPDU(0x00, 0xa4, 0x04, 0x00,new byte[]{(byte) 0xa0, 0x00, 0x00, 0x00, 0x62, 0x03, 0x01, 0x08, 0x01}, 0x7f);
-//			r = c.transmit(a);
-//			System.out.println(r);
-//			if (r.getSW()!=0x9000) throw new Exception("select installer applet failed");
+			a = new CommandAPDU(0x00, 0xa4, 0x04, 0x00,new byte[]{(byte) 0xa0, 0x00, 0x00, 0x00, 0x62, 0x03, 0x01, 0x08, 0x01}, 0x7f);
+			r = c.transmit(a);
+			System.out.println(r);
+			if (r.getSW()!=0x9000) throw new Exception("select installer applet failed");
 			
-//			a = new CommandAPDU(0x80, 0xB8, 0x00, 0x00,new byte[]{0xb, 0x01,0x02,0x03,0x04, 0x05, 0x06, 0x07, 0x08, 0x09,0x00, 0x00, 0x00}, 0x7f);
-//			r = c.transmit(a);
-//			System.out.println(r);
-//			if (r.getSW()!=0x9000) throw new Exception("Applet creation failed");
+			a = new CommandAPDU(0x80, 0xB8, 0x00, 0x00,new byte[]{0xb, 0x01,0x02,0x03,0x04, 0x05, 0x06, 0x07, 0x08, 0x09,0x00, 0x00, 0x00}, 0x7f);
+			r = c.transmit(a);
+			System.out.println(r);
+			if (r.getSW()!=0x9000) throw new Exception("Applet creation failed");
 			
 			//1. Select applet  (not required on a real card, applet is selected by default)
 			a = new CommandAPDU(0x00, 0xa4, 0x04, 0x00,new byte[]{0x01,0x02,0x03,0x04, 0x05, 0x06, 0x07, 0x08, 0x09,0x00, 0x00}, 0x7f);
