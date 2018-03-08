@@ -29,5 +29,7 @@ hs_err_pid*
 /.recommenders/
 
 *.xml
+*.cap
+*.jca
 
 java_card_kit-2_2_2/
